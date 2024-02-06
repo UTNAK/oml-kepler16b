@@ -1,0 +1,15 @@
+# Gradle files
+.gradle
+build
+
+gradle/wrapper/gradle-7.6-bin.zip
+
+# MacOS files
+.DS_Store
+
+# Fuseki output directory
+.fuseki
+
+#Jupyter
+__pycache__/
+*.py[cod]
