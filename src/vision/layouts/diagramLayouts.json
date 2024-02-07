@@ -1,0 +1,56 @@
+{
+  "componentsdiagram": {
+    "name": "Components Diagram",
+    "queries": {
+      "components": "components.sparql",
+      "edge": "components.sparql"
+    },
+    "rowMapping": {
+      "id": "components",
+      "name": "Components",
+      "labelFormat": "{c1_id} {c1_name}",
+      "nodeColor": "Aquamarine",
+      "nodeTextColor": "black",
+      "nodeType": "{c2_id}",
+      "edgeMatchKey": "c1_id"
+    },
+    "edges": [
+      {
+        "id": "edge",
+        "name": "Decomposition",
+        "labelFormat": "contains",
+        "animated": true,
+        "legendItems": "{c2_name}",
+        "sourceKey": "c1_id",
+        "targetKey": "c2_id"
+      }
+    ]
+  },
+  "missiondiagram": {
+    "name": "Mission Diagram",
+    "queries": {
+      "components": "missions-diagram.sparql",
+      "edge": "missions-diagram.sparql"
+    },
+    "rowMapping": {
+      "id": "components",
+      "name": "Mission",
+      "labelFormat": "{m_id} {m_name}",
+      "nodeColor": "Aquamarine",
+      "nodeTextColor": "black",
+      "nodeType": "{m_type}",
+      "edgeMatchKey": "m_id"
+    },
+    "edges": [
+      {
+        "id": "edge",
+        "name": "Decomposition",
+        "labelFormat": "contains",
+        "animated": true,
+        "legendItems": "{c_id}",
+        "sourceKey": "c_id",
+        "targetKey": "m_id"
+      }
+    ]
+  }
+}
