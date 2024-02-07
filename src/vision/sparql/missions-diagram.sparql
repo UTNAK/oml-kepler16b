@@ -21,10 +21,10 @@ WHERE {
 
 	OPTIONAL {
 		?m a mission:Mission ;
-			BIND("Mission"  AS ?m_type) .
+			BIND("Subsystem"  AS ?m_type) .
 	}
 	OPTIONAL {
 		?m a mission:Component ;
-			BIND("Component"  AS ?m_type) .
+			BIND("Assembly"  AS ?m_type) .
 	}
 }

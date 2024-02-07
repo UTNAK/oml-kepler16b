@@ -36,7 +36,7 @@
       "id": "components",
       "name": "Mission",
       "labelFormat": "{m_id} {m_name}",
-      "nodeColor": "Aquamarine",
+      "nodeColor": "Deep Sky Blue",
       "nodeTextColor": "black",
       "nodeType": "{m_type}",
       "edgeMatchKey": "m_id"
