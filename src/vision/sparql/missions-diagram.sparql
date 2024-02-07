@@ -1,0 +1,30 @@
+PREFIX base:        <http://example.com/tutorial2/vocabulary/base#>
+PREFIX mission:     <http://example.com/tutorial2/vocabulary/mission#>
+
+SELECT DISTINCT ?m_id ?m_name ?m_type ?c1_id ?c2_id ?c_id
+WHERE {
+  {?m a mission:Mission ;} UNION {?m a mission:Component;}
+	?m	base:hasIdentifier ?m_id ;
+		base:hasCanonicalName ?m_name .
+  
+  
+  OPTIONAL{
+    ?m mission:isDeployedBy ?c1 .
+     ?c1 base:hasIdentifier ?c1_id ;
+  }
+  OPTIONAL{
+    ?m base:isContainedIn ?c2 .
+     ?c2 base:hasIdentifier ?c2_id ;
+  } 
+  
+  BIND(COALESCE(?c1_id, ?c2_id) AS ?c_id)
+
+	OPTIONAL {
+		?m a mission:Mission ;
+			BIND("Mission"  AS ?m_type) .
+	}
+	OPTIONAL {
+		?m a mission:Component ;
+			BIND("Component"  AS ?m_type) .
+	}
+}
