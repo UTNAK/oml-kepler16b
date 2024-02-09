@@ -6,7 +6,7 @@
 
 # Docker image
 image:
-  file: .gitpod.Dockerfile
+  file: gitpod.Dockerfile
   
 # Tasks to run 
 tasks:
