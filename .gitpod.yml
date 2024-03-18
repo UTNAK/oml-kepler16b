@@ -10,6 +10,8 @@ image:
   
 # Tasks to run 
 tasks:
+  - init: ./gradlew build
+  - init: ./gradlew startFuseki
   - init: ./gradlew owlLoad
 
 # VSCode attributes
